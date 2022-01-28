@@ -82,6 +82,10 @@ def coco_classes():
         'scissors', 'teddy_bear', 'hair_drier', 'toothbrush'
     ]
 
+def apas_classes():
+    return [
+        'Hand'
+    ]
 
 def cityscapes_classes():
     return [
@@ -311,7 +315,8 @@ dataset_aliases = {
     'wider_face': ['WIDERFaceDataset', 'wider_face', 'WIDERFace'],
     'cityscapes': ['cityscapes'],
     'oid_challenge': ['oid_challenge', 'openimages_challenge'],
-    'oid_v6': ['oid_v6', 'openimages_v6']
+    'oid_v6': ['oid_v6', 'openimages_v6'],
+    'apas': ['apas']
 }
 
 
