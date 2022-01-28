@@ -82,6 +82,10 @@ def coco_classes():
         'scissors', 'teddy_bear', 'hair_drier', 'toothbrush'
     ]
 
+def apas_classes():
+    return [
+        'Hand'
+    ]
 
 def cityscapes_classes():
     return [
@@ -96,7 +100,8 @@ dataset_aliases = {
     'imagenet_vid': ['vid', 'imagenet_vid', 'ilsvrc_vid'],
     'coco': ['coco', 'mscoco', 'ms_coco'],
     'wider_face': ['WIDERFaceDataset', 'wider_face', 'WIDERFace'],
-    'cityscapes': ['cityscapes']
+    'cityscapes': ['cityscapes'],
+    'apas': ['apas']
 }
 
 
