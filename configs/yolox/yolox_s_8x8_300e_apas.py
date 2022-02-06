@@ -113,12 +113,13 @@ optimizer = dict(
 optimizer_config = dict(grad_clip=None)
 
 # max_epochs = 300
-max_epochs = 600
+max_epochs = 2000
 
 num_last_epochs = 15
 # resume_from = None
 # load_from = 'https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_s_8x8_300e_coco/yolox_s_8x8_300e_coco_20211121_095711-4592a793.pth'
-resume_from="/data/home/bedward/workspace/mmpose-project/mmdetection/work_dirs/yolox_s_8x8_300e_apas/best_bbox_mAP_epoch_300.pth"
+# resume_from="/data/home/bedward/workspace/mmpose-project/mmdetection/work_dirs/yolox_s_8x8_300e_apas/best_bbox_mAP_epoch_300.pth"
+resume_from="/data/home/bedward/workspace/mmpose-project/mmdetection/work_dirs/yolox_s_8x8_300e_apas/best_bbox_mAP_epoch_600.pth"
 interval = 10
 
 # learning policy
