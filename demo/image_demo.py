@@ -4,8 +4,7 @@ from argparse import ArgumentParser
 
 from mmdet.apis import (async_inference_detector, inference_detector,
                         init_detector, show_result_pyplot)
-
-
+from matplotlib import pyplot as plt
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument('img', help='Image file')
@@ -28,20 +27,28 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-
+import cv2
+import os
 def main(args):
     # build the model from a config file and a checkpoint file
     model = init_detector(args.config, args.checkpoint, device=args.device)
     # test a single image
     result = inference_detector(model, args.img)
     # show the results
-    show_result_pyplot(
-        model,
-        args.img,
-        result,
-        palette=args.palette,
-        score_thr=args.score_thr,
-        out_file=args.out_file)
+
+    # show_result_pyplot(
+    #     model,
+    #     args.img,
+    #     result,
+    #     palette=args.palette,
+    #     score_thr=args.score_thr,
+    #     out_file=args.out_file)
+
+    frame = cv2.imread(args.img)
+    frame = model.show_result(frame, result, score_thr=args.score_thr)
+    # show_result_pyplot(model, args.img, result, score_thr=args.score_thr)
+    cv2.imwrite(f"vis_results/{os.path.basename(args.img)}", frame)
+
 
 
 async def async_main(args):

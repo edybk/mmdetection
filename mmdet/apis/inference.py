@@ -1,6 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import warnings
 from pathlib import Path
+from matplotlib import pyplot as plt
 
 import mmcv
 import numpy as np
@@ -245,7 +246,13 @@ def show_result_pyplot(model,
         show=True,
         wait_time=wait_time,
         win_name=title,
-        bbox_color=palette,
-        text_color=(200, 200, 200),
-        mask_color=palette,
-        out_file=out_file)
+# <<<<<<< HEAD
+#         bbox_color=palette,
+#         text_color=(200, 200, 200),
+#         mask_color=palette,
+#         out_file=out_file)
+# =======
+        bbox_color=(72, 101, 241),
+        text_color=(72, 101, 241))
+    plt.savefig("vis_results/demo.png")
+# >>>>>>> save
